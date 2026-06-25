@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SCS TechStore Services — laptops, desktops, gaming PCs, components, repairs, and business IT solutions." />
+  <title>Services — SCS TechStore</title>
+  <link rel="stylesheet" href="../media/style.css" />
+  <style>
+    .service-section { margin-bottom: 64px; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .product-card {
+      background: var(--slate);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+    .product-card:hover {
+      border-color: rgba(0,212,255,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+    }
+    .product-img {
+      height: 160px;
+      background: linear-gradient(135deg, #1A2A4A, #0D1B35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+    }
+    .product-body { padding: 20px; }
+    .product-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .product-spec { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .product-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+    .product-actions { display: flex; gap: 10px; margin-top: 16px; }
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 13px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-body);
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+    .btn-sm-primary { background: var(--blue); color: white; }
+    .btn-sm-primary:hover { background: #1a4fc4; }
+    .btn-sm-ghost { background: rgba(255,255,255,0.07); color: var(--light); }
+    .btn-sm-ghost:hover { background: rgba(255,255,255,0.12); }
+
+    .repair-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+      counter-reset: step;
+    }
+    .repair-step {
+      background: var(--slate);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: relative;
+    }
+    .step-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(0,212,255,0.15);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step-title { font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <div class="page-header">
+    <div class="container">
+      <span class="section-label">What We Offer</span>
+      <h1>Products &amp; Services</h1>
+      <p>From everyday laptops to enterprise workstations — everything you need, backed by expert support.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- LAPTOPS -->
+      <div class="service-section">
+        <span class="section-label">Category</span>
+        <h2 class="section-title">Laptops &amp; Notebooks</h2>
+        <p class="section-sub">Portable powerhouses for students, creatives, and professionals.</p>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-img">&#x1F4BB;</div>
+            <div class="product-body">
+              <div class="product-name">SCS ProBook 15</div>
+              <div class="product-spec">Intel Core i7 · 16GB RAM · 512GB SSD · 15.6" FHD IPS · Win 11 Pro</div>
+              <div class="product-price">$1,499 <span style="font-size:13px;color:var(--muted);font-weight:400;">AUD</span></div>
+              <div class="product-actions">
+                <button class="btn-sm btn-sm-primary">Add to Cart</button>
+                <button class="btn-sm btn-sm-ghost">Specs &#x2197;</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">&#x2328;&#xFE0F;</div>
+            <div class="product-body">
+              <div class="product-name">SCS SlimBook Air</div>
+              <div class="product-spec">Apple M3 · 8GB Unified · 256GB SSD · 13.6" Retina · macOS Sonoma</div>
+              <div class="product-price">$1,299 <span style="font-size:13px;color:var(--muted);font-weight:400;">AUD</span></div>
+              <div class="product-actions">
+                <button class="btn-sm btn-sm-primary">Add to Cart</button>
+                <button class="btn-sm btn-sm-ghost">Specs &#x2197;</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">&#x1F3AE;</div>
+            <div class="product-body">
+              <div class="product-name">SCS GamerBook 17</div>
+              <div class="product-spec">Intel i9 · 32GB DDR5 · 1TB SSD · RTX 4080 · 17.3" 240Hz · Win 11</div>
+              <div class="product-price">$3,299 <span style="font-size:13px;color:var(--muted);font-weight:400;">AUD</span></div>
+              <div class="product-actions">
+                <button class="btn-sm btn-sm-primary">Add to Cart</button>
+                <button class="btn-sm btn-sm-ghost">Specs &#x2197;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESKTOPS -->
+      <div class="service-section">
+        <span class="section-label">Category</span>
+        <h2 class="section-title">Desktop Computers</h2>
+        <p class="section-sub">Custom-built rigs for every need — home, office, or enterprise.</p>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-img">&#x1F5A5;&#xFE0F;</div>
+            <div class="product-body">
+              <div class="product-name">SCS TowerX Pro</div>
+              <div class="product-spec">AMD Ryzen 9 7900X · 32GB DDR5 · 1TB NVMe · RTX 4070 · Win 11 Pro</div>
+              <div class="product-price">$2,199 <span style="font-size:13px;color:var(--muted);font-weight:400;">AUD</span></div>
+              <div class="product-actions">
+                <button class="btn-sm btn-sm-primary">Add to Cart</button>
+                <button class="btn-sm btn-sm-ghost">Specs &#x2197;</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">&#x1F4E6;</div>
+            <div class="product-body">
+              <div class="product-name">SCS CompactMini</div>
+              <div class="product-spec">Intel Core i5 · 16GB DDR4 · 512GB SSD · Integrated Graphics · Win 11 Home</div>
+              <div class="product-price">$899 <span style="font-size:13px;color:var(--muted);font-weight:400;">AUD</span></div>
+              <div class="product-actions">
+                <button class="btn-sm btn-sm-primary">Add to Cart</button>
+                <button class="btn-sm btn-sm-ghost">Specs &#x2197;</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">&#x1F527;</div>
+            <div class="product-body">
+              <div class="product-name">SCS WorkStation 4K</div>
+              <div class="product-spec">Intel Xeon · 128GB ECC DDR4 · 4TB RAID SSD · Quadro RTX 5000</div>
+              <div class="product-price">$6,499 <span style="font-size:13px;color:var(--muted);font-weight:400;">AUD</span></div>
+              <div class="product-actions">
+                <button class="btn-sm btn-sm-primary">Pre-Order</button>
+                <button class="btn-sm btn-sm-ghost">Specs &#x2197;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE TABLE -->
+      <div class="service-section">
+        <span class="section-label">Service Pricing</span>
+        <h2 class="section-title">Repair &amp; Support Services</h2>
+        <p class="section-sub">Certified technicians. Transparent pricing. Fast turnaround.</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Description</th>
+                <th>Turnaround</th>
+                <th>Price (AUD)</th>
+                <th>Warranty</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Diagnostic</strong></td>
+                <td>Full hardware and software health check</td>
+                <td>Same day</td>
+                <td>$49</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>OS Reinstall</strong></td>
+                <td>Clean Windows or macOS install with data backup</td>
+                <td>1–2 days</td>
+                <td>$99</td>
+                <td>30 days</td>
+              </tr>
+              <tr>
+                <td><strong>Screen Replacement</strong></td>
+                <td>Laptop LCD/OLED panel swap</td>
+                <td>2–3 days</td>
+                <td>From $199</td>
+                <td>90 days</td>
+              </tr>
+              <tr>
+                <td><strong>SSD Upgrade</strong></td>
+                <td>Replace HDD with NVMe SSD + data migration</td>
+                <td>1 day</td>
+                <td>From $149</td>
+                <td>1 year</td>
+              </tr>
+              <tr>
+                <td><strong>RAM Upgrade</strong></td>
+                <td>Install additional or faster memory modules</td>
+                <td>Same day</td>
+                <td>From $79</td>
+                <td>1 year</td>
+              </tr>
+              <tr>
+                <td><strong>Virus Removal</strong></td>
+                <td>Full malware scan, removal, and hardening</td>
+                <td>1 day</td>
+                <td>$89</td>
+                <td>30 days</td>
+              </tr>
+              <tr>
+                <td><strong>Business IT Setup</strong></td>
+                <td>Network configuration, domain join, user setup</td>
+                <td>By quote</td>
+                <td>From $299</td>
+                <td>6 months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- REPAIR PROCESS -->
+      <div class="service-section">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Our Repair Process</h2>
+        <div class="repair-steps">
+          <div class="repair-step">
+            <div class="step-num">01</div>
+            <div class="step-title">Book Online</div>
+            <div class="step-desc">Use our contact form or call to book a service appointment at a time that suits you.</div>
+          </div>
+          <div class="repair-step">
+            <div class="step-num">02</div>
+            <div class="step-title">Free Diagnosis</div>
+            <div class="step-desc">Drop off your device and we run a complimentary diagnostic to identify all issues.</div>
+          </div>
+          <div class="repair-step">
+            <div class="step-num">03</div>
+            <div class="step-title">Transparent Quote</div>
+            <div class="step-desc">We'll call with a fixed-price quote before any work begins. No surprises.</div>
+          </div>
+          <div class="repair-step">
+            <div class="step-num">04</div>
+            <div class="step-title">Collect &amp; Go</div>
+            <div class="step-desc">Pick up your repaired device with a full service report and warranty certificate.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script>
+    // Fix relative path for pages subfolder
+    const s = document.createElement('script');
+    s.src = '../scripts/nav.js';
+    document.head.appendChild(s);
+  </script>
+</body>
+</html>
