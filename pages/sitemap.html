@@ -1,0 +1,359 @@
+pages/sitemap.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SCS TechStore Site Map — overview of all pages on our website." />
+  <title>Site Map — SCS TechStore</title>
+  <link rel="stylesheet" href="../media/style.css" />
+  <style>
+    .sitemap-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    /* Tree */
+    .tree-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .root-node {
+      background: linear-gradient(135deg, var(--blue), #0EA5E9);
+      border-radius: var(--radius);
+      padding: 20px 40px;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 8px 24px rgba(26,86,219,0.4);
+    }
+
+    .root-node .node-file {
+      font-size: 12px;
+      font-weight: 400;
+      font-family: monospace;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    .tree-connector-down {
+      width: 2px;
+      height: 40px;
+      background: rgba(0,212,255,0.3);
+    }
+
+    .tree-h-bar {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .tree-h-line {
+      height: 2px;
+      background: rgba(0,212,255,0.25);
+      width: 80%;
+      position: absolute;
+      top: 0;
+    }
+
+    .branches {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      position: relative;
+      padding-top: 40px;
+    }
+
+    .branch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .branch-down {
+      width: 2px;
+      height: 40px;
+      background: rgba(0,212,255,0.3);
+    }
+
+    .page-node {
+      background: var(--slate);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      min-width: 140px;
+      transition: all var(--transition);
+    }
+
+    .page-node:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,212,255,0.15);
+    }
+
+    .page-node .node-file {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: monospace;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+
+    .page-node .node-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* Sub-nodes */
+    .sub-nodes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .sub-node {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      min-width: 140px;
+      text-align: center;
+    }
+
+    /* Details table */
+    .page-details {
+      margin-top: 56px;
+    }
+
+    .page-details h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <div class="page-header">
+    <div class="container">
+      <span class="section-label">Navigation Overview</span>
+      <h1>Site Map</h1>
+      <p>A complete overview of all pages and their structure within the SCS TechStore website.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="sitemap-wrapper">
+
+        <!-- Visual Tree -->
+        <div class="tree-container">
+
+          <!-- Root -->
+          <div class="root-node">
+            &#x1F310; SCS TechStore
+            <div class="node-file">www.scstechstore.com.au</div>
+          </div>
+
+          <!-- Connector down -->
+          <div class="tree-connector-down"></div>
+
+          <!-- Horizontal bar -->
+          <div style="position:relative; width:80%;">
+            <div style="height:2px; background:rgba(0,212,255,0.25); width:100%;"></div>
+          </div>
+
+          <!-- Branches -->
+          <div class="branches">
+
+            <div class="branch-item">
+              <div class="branch-down"></div>
+              <a href="../index.html" class="page-node">
+                <span class="node-icon">&#x1F3E0;</span>
+                Home
+                <div class="node-file">index.html</div>
+              </a>
+              <div class="sub-nodes">
+                <div class="sub-node">Hero Banner</div>
+                <div class="sub-node">Stats Bar</div>
+                <div class="sub-node">Features Grid</div>
+                <div class="sub-node">Products Table</div>
+                <div class="sub-node">Motto</div>
+              </div>
+            </div>
+
+            <div class="branch-item">
+              <div class="branch-down"></div>
+              <a href="services.html" class="page-node">
+                <span class="node-icon">&#x1F6CD;&#xFE0F;</span>
+                Services
+                <div class="node-file">services.html</div>
+              </a>
+              <div class="sub-nodes">
+                <div class="sub-node">Laptops</div>
+                <div class="sub-node">Desktops</div>
+                <div class="sub-node">Service Table</div>
+                <div class="sub-node">Repair Process</div>
+              </div>
+            </div>
+
+            <div class="branch-item">
+              <div class="branch-down"></div>
+              <a href="gallery.html" class="page-node">
+                <span class="node-icon">&#x1F5BC;&#xFE0F;</span>
+                Photo Gallery
+                <div class="node-file">gallery.html</div>
+              </a>
+              <div class="sub-nodes">
+                <div class="sub-node">Filter Bar</div>
+                <div class="sub-node">15 Gallery Items</div>
+                <div class="sub-node">Lightbox Viewer</div>
+              </div>
+            </div>
+
+            <div class="branch-item">
+              <div class="branch-down"></div>
+              <a href="contact.html" class="page-node">
+                <span class="node-icon">&#x2709;&#xFE0F;</span>
+                Contact Us
+                <div class="node-file">contact.html</div>
+              </a>
+              <div class="sub-nodes">
+                <div class="sub-node">Contact Details</div>
+                <div class="sub-node">Business Hours</div>
+                <div class="sub-node">Contact Form</div>
+              </div>
+            </div>
+
+            <div class="branch-item">
+              <div class="branch-down"></div>
+              <a href="sitemap.html" class="page-node" style="border-color:var(--cyan); color:var(--cyan);">
+                <span class="node-icon">&#x1F5FA;&#xFE0F;</span>
+                Site Map
+                <div class="node-file">sitemap.html</div>
+              </a>
+              <div class="sub-nodes">
+                <div class="sub-node">Visual Tree</div>
+                <div class="sub-node">Page Index</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Page Index Table -->
+        <div class="page-details">
+          <h3>&#x1F4C4; Page Directory</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Page</th>
+                  <th>Filename</th>
+                  <th>Location</th>
+                  <th>Description</th>
+                  <th>Key Features</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Home</strong></td>
+                  <td><code style="font-family:monospace; color:var(--cyan);">index.html</code></td>
+                  <td>Root</td>
+                  <td>Main landing page</td>
+                  <td>Hero, Stats, Products Table, Motto</td>
+                </tr>
+                <tr>
+                  <td><strong>Services</strong></td>
+                  <td><code style="font-family:monospace; color:var(--cyan);">services.html</code></td>
+                  <td>/pages/</td>
+                  <td>Products &amp; repair services</td>
+                  <td>Product Cards, Pricing Table, Repair Steps</td>
+                </tr>
+                <tr>
+                  <td><strong>Photo Gallery</strong></td>
+                  <td><code style="font-family:monospace; color:var(--cyan);">gallery.html</code></td>
+                  <td>/pages/</td>
+                  <td>Visual product showcase</td>
+                  <td>Filter, 15 Items, Lightbox</td>
+                </tr>
+                <tr>
+                  <td><strong>Contact Us</strong></td>
+                  <td><code style="font-family:monospace; color:var(--cyan);">contact.html</code></td>
+                  <td>/pages/</td>
+                  <td>Enquiries &amp; bookings</td>
+                  <td>Contact Info, Form, Hours</td>
+                </tr>
+                <tr>
+                  <td><strong>Site Map</strong></td>
+                  <td><code style="font-family:monospace; color:var(--cyan);">sitemap.html</code></td>
+                  <td>/pages/</td>
+                  <td>Navigation overview</td>
+                  <td>Visual Tree, Page Directory</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Assets -->
+        <div style="margin-top:40px;">
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1rem; font-weight:700; color:var(--white); margin-bottom:20px;">&#x1F4C1; File &amp; Folder Structure</h3>
+          <div style="background:var(--slate); border:1px solid rgba(255,255,255,0.07); border-radius:var(--radius); padding:24px; font-family:monospace; font-size:13px; color:var(--muted); line-height:2;">
+            <span style="color:var(--cyan);">SCS_Website/</span><br>
+            &nbsp;&nbsp;&#x251C;&#x2500;&#x2500; <span style="color:var(--white);">index.html</span><br>
+            &nbsp;&nbsp;&#x251C;&#x2500;&#x2500; <span style="color:var(--cyan);">pages/</span><br>
+            &nbsp;&nbsp;&#x2502;&nbsp;&nbsp; &#x251C;&#x2500;&#x2500; services.html<br>
+            &nbsp;&nbsp;&#x2502;&nbsp;&nbsp; &#x251C;&#x2500;&#x2500; gallery.html<br>
+            &nbsp;&nbsp;&#x2502;&nbsp;&nbsp; &#x251C;&#x2500;&#x2500; contact.html<br>
+            &nbsp;&nbsp;&#x2502;&nbsp;&nbsp; &#x2514;&#x2500;&#x2500; sitemap.html<br>
+            &nbsp;&nbsp;&#x251C;&#x2500;&#x2500; <span style="color:var(--cyan);">media/</span><br>
+            &nbsp;&nbsp;&#x2502;&nbsp;&nbsp; &#x2514;&#x2500;&#x2500; style.css<br>
+            &nbsp;&nbsp;&#x251C;&#x2500;&#x2500; <span style="color:var(--cyan);">scripts/</span><br>
+            &nbsp;&nbsp;&#x2502;&nbsp;&nbsp; &#x2514;&#x2500;&#x2500; nav.js<br>
+            &nbsp;&nbsp;&#x2514;&#x2500;&#x2500; <span style="color:var(--cyan);">_notes/</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script>
+    const s = document.createElement('script');
+    s.src = '../scripts/nav.js';
+    document.head.appendChild(s);
+  </script>
+</body>
+</html>
