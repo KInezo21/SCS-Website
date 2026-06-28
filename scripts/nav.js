@@ -1,4 +1,3 @@
-scripts/nav.js
 // SCS Website — shared navigation & footer injector
 (function () {
   const pages = [
